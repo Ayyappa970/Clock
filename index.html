@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(blue,red);
+            text-align: center;
+        }
+        #heading{
+            font-size: 10vw;
+            font-style: italic;
+            text-shadow: 5px 5px 5px red;
+            text-decoration: underline solid 4px black;
+        }
+        #Time,#Date,#Day{
+            margin-top: 2vh;
+            font-size: 8vw;
+            font-style: italic;
+            text-shadow: 5px 5px 5px blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Digital Clock</h1>
+        <h1 id="Time"></h1>
+        <h1 id="Date"></h1>
+        <h1 id="Day"></h1>
+        <script>
+            function dateAndTime()
+            {
+                var date=new Date();
+                var hh=date.getHours();
+                var min=date.getMinutes();
+                var ss=date.getSeconds();
+                var dt=date.getDate();
+                var mo=date.getMonth();
+                var yr=date.getFullYear();
+                var d=date.getDay();
+                var am_pm="AM";
+                switch(mo)
+                {
+                    case 0:mo="Jan";
+                    break;
+                    case 1:mo="Feb";
+                    break;
+                    case 2:mo="Mar";
+                    break;
+                    case 3:mo="Apr";
+                    break;
+                    case 4:mo="May";
+                    break;
+                    case 5:mo="Jun";
+                    break;
+                    case 6:mo="Jul";
+                    break;
+                    case 7:mo="Aug";
+                    break;
+                    case 8:mo="Sep";
+                    break;
+                    case 9:mo="Oct";
+                    break;
+                    case 10:mo="Nov";
+                    break;
+                    case 11:mo="Dec";
+                    break;
+                }
+                switch(d)
+                {
+                    case 0:d="Sunday";
+                    break;
+                    case 1:d="Monday";
+                    break;
+                    case 2:d="Tuesday";
+                    break;
+                    case 3:d="Wednesday";
+                    break;
+                    case 4:d="Thursday";
+                    break;
+                    case 5:d="Friday";
+                    break;
+                    case 6:d="Saturday";
+                    break;
+                }
+                if(min<10)
+                {
+                    min="0"+min;
+
+                }
+                if(ss<10)
+                {
+                    ss="0"+ss;
+
+                }
+               
+                if(dt<10)
+                {
+                    dt="0"+dt;
+                }
+                if(hh>=12)
+                {
+                    hh-=12;
+                    am_pm="PM";
+                    if(hh==0)
+                    {
+                        hh=12;
+                    }
+                }
+                if(hh<10)
+                {
+                    hh="0"+hh;
+
+                }
+                var totalTime=hh+":"+min+":"+ss+" "+am_pm;
+                document.getElementById("Time").innerHTML=totalTime;
+                var totalDate=dt+" - "+mo+" - "+yr;
+                document.getElementById("Date").innerHTML=totalDate;
+                document.getElementById("Day").innerHTML=d;
+                var update=setTimeout(function(){dateAndTime()},1000);
+            }
+            dateAndTime();
+        </script>
+</body>
+</html>
