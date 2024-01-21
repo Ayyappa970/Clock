@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(blue,red);
+    text-align: center;
+}
+#heading{
+    font-size: 10vw;
+    font-style: italic;
+    text-shadow: 5px 5px 5px red;
+    text-decoration: underline solid 4px black;
+}
+#Time,#Date,#Day{
+    margin-top: 2vh;
+    font-size: 8vw;
+    font-style: italic;
+    text-shadow: 5px 5px 5px blue;
+}
