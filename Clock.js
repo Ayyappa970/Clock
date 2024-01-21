@@ -49,9 +49,7 @@ function dateAndTime()
                 var totalTime=hh+":"+min+":"+ss+" "+am_pm;
                 document.getElementById("Time").innerHTML=totalTime;
                 var totalDate=dt+" - "+mo+" - "+yr;
-                if(yr%4==0){
-                    document.getElementById("Date").innerHTML=totalDate;
-                }else{}
+                document.getElementById("Date").innerHTML=totalDate;
                 document.getElementById("Day").innerHTML=d;
                 var update=setTimeout(function(){dateAndTime()},1000);
             }
